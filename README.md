@@ -2,26 +2,65 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.11.
 
-## Development server
+## learnings
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+# Modules 
+     in modules we have bunch of related components 
 
-## Code scaffolding
+# Data bindings 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+    1) Interpolation (one-way binding)
+        EXAMPLE: {{ }} - string interpolation
+    2) Property binding (one-way binding)
+        EXAMPLE: <app-greeting [message]="appMessage"></app-greeting>
+    3) Event binding (one-way binding)
+        EXAMPLE: <button (click)="onClick()">Click Me</button>
+    4) Two way binding
+        EXAMPLE: <input [(ngModel)]="appMessage">
 
-## Build
+# components
+    create a component 
+    register component  in a module of declarations[]
+    add a element in HTML markup to render 
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+# Directives
+    *ngFor
+    *ngIf
 
-## Running unit tests
+# service 
+    <!-- Basic for TS -->
+        create a service 
+        register service in a module of provider[]
+        to use that add in a constructor parameter
+        this is called (Dependency injection)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+    <!-- Angular lifecycle hook -->
+        create a service 
+        to use in components use inject() from angular/core 
+        and do implemets OnInit from core 
+        use ngOnInit(): void {
 
-## Running end-to-end tests
+        } 
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+# parent to child 
+    # @Input() - is a decerator used to send data from parent to child
 
-## Further help
+# Event listeners
+    EXAMPLE :  <button (click)='increment()'>Increment</button>
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+# Routing
+    # standalone component - no need to put in NgModule declaraions direclty we can call in routing
+    # in app html call router component
+
+# HTTP calls in Angular 
+    # provide HTTP module / providers in the app module using provideHttpClient()
+    # inject the HttpClient service in service 
+    # use http methods
+
+# lifecycle hooks in angular 
+
+# ngOnChanges()
+    # ✅ ngOnChanges() only runs when an @Input() changes.
+    # ✅ It is useful for detecting input updates and reacting to them.
+    # ✅ SimpleChanges contains details about previous and current values.
+    # ✅ Does not run on local variable changes, only when inputs change from a parent component.

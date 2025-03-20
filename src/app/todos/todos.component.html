@@ -1,0 +1,23 @@
+<h3>Todos List</h3>
+
+<p *ngIf="!todoList.length">Loading...</p>
+
+<form action="">
+  <label for="">Filter Todos</label>
+  <input
+    name="searchTerm"
+    [(ngModel)]="searchTerm"
+    type="text"
+    placeholder="Search todos...."
+  />
+</form>
+
+<ul class="todos">
+  <li *ngFor="let todo of todoList | filterTodos: searchTerm" class="todos-item">
+    <!-- calling an component and passing prop -->
+    <app-todo-item
+      (todoToggled)="updateTodoItem($event)"
+      [item]="todo"
+    ></app-todo-item>
+  </li>
+</ul>
