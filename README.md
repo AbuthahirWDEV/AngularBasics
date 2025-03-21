@@ -45,6 +45,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 # parent to child 
     # @Input() - is a decerator used to send data from parent to child
 
+# child to parent 
+    # @Output() - is a decorator used to send data from child to parent 
+
 # Event listeners
     EXAMPLE :  <button (click)='increment()'>Increment</button>
 
